@@ -1,0 +1,460 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-07-01T22:02:35.831228Z",
+  "congregation_name": "Mayor Buratovich",
+  "main_user_role": null,
+  "priorities": [],
+  "hard_constraints": [],
+  "person_constraints": {},
+  "rotation_rules": {},
+  "channel_policy": {},
+  "notes": [],
+  "durable_rules": [
+    {
+      "id": "0676423c-f98e-469e-b887-d8da19e6fc41",
+      "text": "Toda regla, restriccion, preferencia, excepcion o criterio de rotacion confirmado por el usuario debe persistirse durante la misma conversacion y consultarse al iniciar futuras tareas operativas.",
+      "category": "persistence_policy",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "superseded",
+      "source": "user",
+      "created_at": "2026-06-23T00:11:06.312822Z",
+      "updated_at": "2026-06-23T00:14:01.627491Z",
+      "metadata": {
+        "channel": "conversation",
+        "confirmed_on": "2026-06-22"
+      }
+    },
+    {
+      "id": "ad3e40e3-2f04-4128-9262-e85720f6fadc",
+      "text": "Todo dato que el usuario comunique sobre un hermano o hermana debe considerarse confirmado y persistirse inmediatamente, sin solicitar confirmacion adicional. Esto incluye restricciones, disponibilidad, aptitudes, preferencias, relaciones familiares y observaciones operativas.",
+      "category": "persistence_policy",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:14:01.627535Z",
+      "updated_at": "2026-06-23T00:14:01.627535Z",
+      "metadata": {
+        "automatic_person_memory": true,
+        "channel": "conversation",
+        "confirmed_on": "2026-06-22"
+      }
+    },
+    {
+      "id": "b8c04994-cdd7-4595-b1af-5935d4b6c277",
+      "text": "Josefina Hecker esta deshabilitada hasta nuevo aviso. No debe recibir ninguna asignacion en programas actuales ni futuros hasta que el usuario indique lo contrario.",
+      "category": "person_exclusion",
+      "scope": "person",
+      "person_name": "Josefina Hecker",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:23:47.404068Z",
+      "updated_at": "2026-06-23T00:23:47.404070Z",
+      "metadata": {
+        "is_hard": true,
+        "indefinite": true
+      }
+    },
+    {
+      "id": "a109d248-5ff4-46de-a156-b71e895b19b5",
+      "text": "Julian Esmoli esta deshabilitado hasta nuevo aviso. No debe recibir ninguna asignacion en programas actuales ni futuros hasta que el usuario indique lo contrario.",
+      "category": "person_exclusion",
+      "scope": "person",
+      "person_name": "Julian Esmoli",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:23:47.423652Z",
+      "updated_at": "2026-06-23T00:23:47.423655Z",
+      "metadata": {
+        "is_hard": true,
+        "indefinite": true
+      }
+    },
+    {
+      "id": "fc9e84d4-6182-442f-b153-6a67c66a5112",
+      "text": "Ruben Hecker esta deshabilitado hasta nuevo aviso. No debe recibir ninguna asignacion en programas actuales ni futuros hasta que el usuario indique lo contrario.",
+      "category": "person_exclusion",
+      "scope": "person",
+      "person_name": "Ruben Hecker",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:23:47.442688Z",
+      "updated_at": "2026-06-23T00:23:47.442691Z",
+      "metadata": {
+        "is_hard": true,
+        "indefinite": true
+      }
+    },
+    {
+      "id": "a60bf03e-824e-4aac-99a6-34b223c9f922",
+      "text": "Limitar la participacion de Tiziano Di'Ferdinando, especialmente en discursos. Puede utilizarse ocasionalmente, pero con baja frecuencia porque es menor.",
+      "category": "participation_limit",
+      "scope": "person",
+      "person_name": "Tiziano Di'Ferdinando",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:23:47.474985Z",
+      "updated_at": "2026-06-23T00:23:47.474987Z",
+      "metadata": {
+        "is_hard": false,
+        "priority": "high",
+        "applies_especially_to": "discurso"
+      }
+    },
+    {
+      "id": "0c0adbed-5aa1-468b-8f4b-e15dc54dca5f",
+      "text": "Limitar la participacion de Ana Jara porque es una hermana mayor con limitaciones. Utilizarla con baja frecuencia y solo en asignaciones adecuadas.",
+      "category": "participation_limit",
+      "scope": "person",
+      "person_name": "Ana Jara",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:23:47.496442Z",
+      "updated_at": "2026-06-23T00:23:47.496443Z",
+      "metadata": {
+        "is_hard": false,
+        "priority": "high"
+      }
+    },
+    {
+      "id": "1da5eecf-baed-4fde-85a0-181d2e908ed6",
+      "text": "Todos los borradores de asignaciones deben mostrar junto a cada parte una descripcion breve de lo que requiere la asignacion, para permitir feedback detallado.",
+      "category": "output_format",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:23:47.523801Z",
+      "updated_at": "2026-06-23T00:23:47.523803Z",
+      "metadata": {
+        "required": true
+      }
+    },
+    {
+      "id": "a4d7ecf5-f3b2-4774-9c07-83c26923ec27",
+      "text": "Toda correccion operativa que indique el usuario debe persistirse inmediatamente, sin pedir confirmacion adicional, y aplicarse tanto al borrador actual como a futuros programas cuando su alcance sea permanente.",
+      "category": "persistence_policy",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-06-23T00:40:26.345114Z",
+      "updated_at": "2026-06-23T00:40:26.345123Z",
+      "metadata": {
+        "confirmed_on": "2026-06-22",
+        "automatic_corrections": true
+      }
+    },
+    {
+      "id": "6fa9b114-05a8-44dc-b365-ea14c5de20bf",
+      "text": "Busquemos perlas escondidas se considera asignada automaticamente al presidente de cada semana. No debe cargarse como asignacion separada en el historico ni en borradores operativos, salvo que el usuario indique otra cosa.",
+      "category": "assignment_mapping",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:32:27.128944Z",
+      "updated_at": "2026-07-01T21:32:27.128947Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "applies_to": "busquemos_perlas_escondidas",
+        "automatic_assignee": "presidente"
+      }
+    },
+    {
+      "id": "fffc3cb6-5be6-47c0-a494-e0cff6da7130",
+      "text": "Usar el historico cargado del 4 de mayo al 28 de junio de 2026 como referencia no rigida para razonar asignaciones futuras: roles observados, frecuencia y patrones de acompañante orientan, pero no bloquean cambios si el usuario lo indica.",
+      "category": "rotation_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:38:21.855147Z",
+      "updated_at": "2026-07-01T21:38:21.855150Z",
+      "metadata": {
+        "source": "jw-meeting-may-jul.pdf",
+        "range_start": "2026-05-04",
+        "range_end": "2026-06-22",
+        "non_rigid": true
+      }
+    },
+    {
+      "id": "cfb598d8-a38b-4be4-90b6-5a9650a3f41b",
+      "text": "Las personas que aparecen asignadas en el historico cargado se consideran habilitadas para recibir asignaciones segun los tipos observados. No inferir automaticamente que una persona no observada esta habilitada; pedir confirmacion o usar datos posteriores.",
+      "category": "eligibility_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:38:21.861335Z",
+      "updated_at": "2026-07-01T21:38:21.861337Z",
+      "metadata": {
+        "source": "jw-meeting-may-jul.pdf",
+        "non_rigid": true
+      }
+    },
+    {
+      "id": "aa9f5192-8856-4e1a-aaac-ccdf13e560a5",
+      "text": "Para encargados frecuentes, tomar como referencia a Jorge Prado, Gabriel Caballero, Jacsiel Rodriguez y Mario Llanos: el historico los usa con alta frecuencia en presidencia, tesoros, vida cristiana, estudio biblico y algunas oraciones. Rotarlos entre si y evitar sobrecargar al mismo en semanas consecutivas cuando haya alternativa.",
+      "category": "frequency_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:38:21.871629Z",
+      "updated_at": "2026-07-01T21:38:21.871631Z",
+      "metadata": {
+        "tier": "alta_frecuencia_encargado",
+        "people": [
+          "Jorge Prado",
+          "Gabriel Caballero",
+          "Jacsiel Rodriguez",
+          "Mario Llanos"
+        ],
+        "non_rigid": true
+      }
+    },
+    {
+      "id": "21091167-f082-43b9-813c-4e7e1544801d",
+      "text": "Oscar San Martin y Pedro Francisco aparecen como apoyo de frecuencia media, sobre todo en oraciones, lectura/lector y algunas partes puntuales. Usarlos como complemento de rotacion, no como carga principal semanal constante.",
+      "category": "frequency_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:38:21.876498Z",
+      "updated_at": "2026-07-01T21:38:21.876499Z",
+      "metadata": {
+        "tier": "frecuencia_media",
+        "people": [
+          "Oscar San Martin",
+          "Pedro Francisco"
+        ],
+        "non_rigid": true
+      }
+    },
+    {
+      "id": "ef6f1e8a-7a4b-49d1-ad26-e366cb261bed",
+      "text": "En partes de estudiantes y ayudantes, variar las parejas. En el historico de mayo-junio cada combinacion principal/ayudante aparece una sola vez, por lo que conviene evitar repetir la misma pareja dentro de un periodo cercano salvo necesidad.",
+      "category": "pairing_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:38:21.881604Z",
+      "updated_at": "2026-07-01T21:38:21.881605Z",
+      "metadata": {
+        "source": "jw-meeting-may-jul.pdf",
+        "pair_repetition_reference": "sin_repeticiones",
+        "non_rigid": true
+      }
+    },
+    {
+      "id": "8b738155-4579-4a20-a9b7-6b7a53dcae13",
+      "text": "La frecuencia de uso debe ser proporcional al patron observado: encargados frecuentes pueden aparecer varias veces al mes en distintas funciones; publicadores de partes de estudiante/ayudante suelen aparecer de forma moderada u ocasional, alternando rol principal y ayudante cuando el historico lo muestra.",
+      "category": "rotation_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:38:21.886747Z",
+      "updated_at": "2026-07-01T21:38:21.886748Z",
+      "metadata": {
+        "non_rigid": true,
+        "uses_person_extra_data_assignment_reference": true
+      }
+    },
+    {
+      "id": "8b6b0fc0-8a02-430f-a445-ae987132ef93",
+      "text": "Sandro Diferdinando puede usarse en el siguiente programa para Tesoros de la Biblia y para asignaciones de Nuestra Vida Cristiana, excepto cuando la parte indique que debe estar a cargo de un anciano. Mantener igualmente equilibrio en la carga y no sobreusarlo.",
+      "category": "person_capability",
+      "scope": "person",
+      "person_name": "Sandro Diferdinando",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:42:06.240179Z",
+      "updated_at": "2026-07-01T21:42:06.240183Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "applies_to_next_program": true,
+        "allowed_assignment_codes": [
+          "tesoros_discurso",
+          "vida_cristiana_parte"
+        ],
+        "excluded_when_requires_elder": true,
+        "non_rigid": true,
+        "balance_required": true
+      }
+    },
+    {
+      "id": "c9f73131-3483-482e-ae52-79628944da31",
+      "text": "Gabriel Caballero puede usarse como lector del Estudio Biblico de la congregacion si no se viene usando en esa funcion. Considerarlo como opcion de rotacion, manteniendo equilibrio en la carga total.",
+      "category": "person_capability",
+      "scope": "person",
+      "person_name": "Gabriel Caballero",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:42:06.245617Z",
+      "updated_at": "2026-07-01T21:42:06.245619Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "applies_to_next_program": true,
+        "allowed_assignment_codes": [
+          "lector_estudio"
+        ],
+        "condition": "si_no_se_viene_usando",
+        "non_rigid": true,
+        "balance_required": true
+      }
+    },
+    {
+      "id": "2679b131-69f3-47bf-a2e1-d3b7d1986546",
+      "text": "Para razonar la secuencia de presidencia del programa que empieza el 6 de julio de 2026, considerar que Jacsiel Rodriguez tiene asignada la presidencia de la semana del 29 de junio al 5 de julio de 2026.",
+      "category": "week_assignment_reference",
+      "scope": "week",
+      "person_name": null,
+      "effective_from": "2026-06-29",
+      "effective_to": "2026-07-05",
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T21:50:03.594003Z",
+      "updated_at": "2026-07-01T21:50:03.594006Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "assignment_code": "presidente",
+        "person_name": "Jacsiel Rodriguez",
+        "use_for_rotation_sequence": true
+      }
+    },
+    {
+      "id": "c18df82a-f529-4cc0-ac2d-b6a44ef71006",
+      "text": "Para oraciones, priorizar que la misma persona no tenga oracion inicial y final en la misma semana. En lo posible, evitar que una misma persona repita oracion semana tras semana, pero esto es menos sensible que otras asignaciones.",
+      "category": "rotation_reference",
+      "scope": "global",
+      "person_name": null,
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T22:01:41.725949Z",
+      "updated_at": "2026-07-01T22:01:41.725951Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "applies_to": [
+          "oracion_inicial",
+          "oracion_final"
+        ],
+        "non_rigid": true
+      }
+    },
+    {
+      "id": "47258f18-329d-4626-8796-b3e44294b5e5",
+      "text": "Aunque Sandro Diferdinando puede usarse para Nuestra Vida Cristiana, no debe concentrarse en casi todas esas asignaciones. Usarlo ocasionalmente y equilibrar esa seccion con otros hermanos aptos.",
+      "category": "participation_limit",
+      "scope": "person",
+      "person_name": "Sandro Diferdinando",
+      "effective_from": null,
+      "effective_to": null,
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T22:01:41.743883Z",
+      "updated_at": "2026-07-01T22:01:41.743885Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "applies_to": "vida_cristiana_parte",
+        "non_rigid": true,
+        "balance_required": true
+      }
+    },
+    {
+      "id": "f4ec770b-2654-4316-9abe-a071a7c7ae6e",
+      "text": "Caterin San Martin ya tiene una asignacion en la semana del 29 de junio al 5 de julio de 2026. Considerar esa carga al preparar las primeras semanas de julio.",
+      "category": "week_assignment_reference",
+      "scope": "week",
+      "person_name": "Caterin San Martin",
+      "effective_from": "2026-06-29",
+      "effective_to": "2026-07-05",
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T22:01:41.748465Z",
+      "updated_at": "2026-07-01T22:01:41.748467Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "use_for_rotation_sequence": true
+      }
+    },
+    {
+      "id": "92eb599f-cc13-427d-87df-dd0bb2e67793",
+      "text": "Durante julio de 2026 no usar a Mariela San Martin para nuevas asignaciones, salvo que el usuario indique lo contrario.",
+      "category": "person_exclusion",
+      "scope": "person",
+      "person_name": "Mariela San Martin",
+      "effective_from": "2026-07-01",
+      "effective_to": "2026-07-31",
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T22:01:41.766953Z",
+      "updated_at": "2026-07-01T22:01:41.766956Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "is_hard": true,
+        "month_scope": "2026-07"
+      }
+    },
+    {
+      "id": "4f23cd23-b2e3-4a6f-9f12-654dd6e9df65",
+      "text": "Maria Oyon ya tiene una asignacion en la semana del 29 de junio al 5 de julio de 2026. Considerar esa carga al preparar las primeras semanas de julio.",
+      "category": "week_assignment_reference",
+      "scope": "week",
+      "person_name": "Maria Oyon",
+      "effective_from": "2026-06-29",
+      "effective_to": "2026-07-05",
+      "status": "active",
+      "source": "user",
+      "created_at": "2026-07-01T22:02:35.831220Z",
+      "updated_at": "2026-07-01T22:02:35.831223Z",
+      "metadata": {
+        "confirmed_on": "2026-07-01",
+        "use_for_rotation_sequence": true
+      }
+    }
+  ],
+  "logs": []
+}

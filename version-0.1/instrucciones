@@ -1,0 +1,11 @@
+basandonos en el archivo programa-completo-nuevo.html vamos a hacer algunos cambios:
+
+- Separar json programaData a un archivo .json externo
+    - no es necesario un mecanismo para actualizar el json o cargarlo, el mismo se guardara en un directorio a mano y por codigo indicare cual es el json a usar
+    - agregar un campo version al json
+- hacer que las asginaciones dentro de la estructura del json queden de una forma mas entendible
+    - actualmente las asignaciones se setean en un nodo aparte, mi idea es que cada asignacion tenga sus asignados en el mismo nodo, estgo requiere cambios en la estructura del json y en como se procesa el mismo en la vista
+- Que las asignaciones puedan setearse por medio de la vista:
+    - manteniendo el miso formato actual hagamos que sean editable los campos que se asignan por medio del json.
+    - debo tener un boton de "guardar cambios" arriba a la derecha, el mismo no debe afectar la vista de impresion.
+    - los cambios se persisten en el localStorage, con una referencia a la version del json que corresponde , asi como todos los otros campos necesarios para recrear la asignacion cuando se vuelva a levantar la pagina con esa version del json

@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: jw_meeting_db
+    environment:
+      POSTGRES_USER: jwmeeting
+      POSTGRES_PASSWORD: jwmeeting_dev
+      POSTGRES_DB: jw_meeting
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U jwmeeting" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - jw_meeting_network
+
+  # FastAPI Backend
+  api:
+    build:
+      context: ./jw-meeting-backend
+      dockerfile: Dockerfile
+    container_name: jw_meeting_api
+    command: >
+      uvicorn src.api.main:app
+      --app-dir /app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+      --reload-dir /app/src
+      --reload-dir /app/migrations
+      --reload-dir /app/tests
+    environment:
+      DATABASE_URL: postgresql+asyncpg://jwmeeting:jwmeeting_dev@db:5432/jw_meeting
+      ENVIRONMENT: development
+      LOG_LEVEL: DEBUG
+      PYTHONPATH: /app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./jw-meeting-backend/src:/app/src:Z
+      - ./jw-meeting-backend/migrations:/app/migrations:Z
+      - ./jw-meeting-backend/tests:/app/tests:Z
+      - ./jw-meeting-backend/data:/app/data:Z
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - jw_meeting_network
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./jw-meeting-frontend
+      dockerfile: Dockerfile
+    container_name: jw_meeting_frontend
+    command: npm run dev -- --host 0.0.0.0 --port 5173
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./jw-meeting-frontend/src:/app/src:Z
+      - ./jw-meeting-frontend/public:/app/public:Z
+      - ./jw-meeting-frontend/index.html:/app/index.html:Z
+      - /app/node_modules # Prevent overwriting node_modules
+    depends_on:
+      - api
+    networks:
+      - jw_meeting_network
+
+  # pgAdmin (opcional, para administración de BD)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: jw_meeting_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@jwmeeting.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+    networks:
+      - jw_meeting_network
+    profiles:
+      - tools # Solo se inicia con: docker-compose --profile tools up
+
+volumes:
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  jw_meeting_network:
+    driver: bridge

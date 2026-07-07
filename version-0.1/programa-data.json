@@ -1,0 +1,519 @@
+{
+  "semanas": [
+                {
+                    "fecha": "27 octubre – 2 noviembre",
+                    "lectura": "Eclesiastés 11, 12",
+                    "canciones": {
+                        "apertura": 155,
+                        "medio": 111,
+                        "cierre": 8
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Jorge Prado",
+                        "tesoros1": "Mario Llanos",
+                        "lecturaEstudiante": "Tiziano Di'Ferdinando",
+                        "maestros": [
+                            { "estudiante": "Maria Rozas", "ayudante": "Caterin San Martin" },
+                            { "estudiante": "Delia Moya", "ayudante": "Ana Jara" },
+                            { "estudiante": "Oscar San Martin", "ayudante": "" }
+                        ],
+                        "vidaCristiana": ["Jacsiel Rodriguez"],
+                        "conductorEstudio": "Jorge Prado",
+                        "lectorEstudio": "Mario Llanos",
+                        "oracionFinal": "Mario Llanos"
+                    },
+                    "tesoros": {
+                        "titulo1": "Disfrute de una vida feliz y saludable",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas. De casa en casa",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas. Predicación informal",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discurso",
+                            "titulo": "Discurso",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Necesidades de la congregación",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "3 – 9 noviembre",
+                    "lectura": "El Cantar de los Cantares 1, 2",
+                    "canciones": {
+                        "apertura": 132,
+                        "medio": 46,
+                        "cierre": 137
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Gabriel Caballero",
+                        "tesoros1": "Jorge Prado",
+                        "lecturaEstudiante": "Luis Campos",
+                        "maestros": [
+                            { "estudiante": "Norma Llanos", "ayudante": "Mario Llanos" },
+                            { "estudiante": "Idalba Ortiz", "ayudante": "Maria Prado" },
+                            { "estudiante": "Maria Caballero", "ayudante": "Mariela San Martin" }
+                        ],
+                        "vidaCristiana": ["Gabriel Caballero"],
+                        "conductorEstudio": "Mario Llanos",
+                        "lectorEstudio": "Pedro Francisco",
+                        "oracionFinal": "Jorge Prado"
+                    },
+                    "tesoros": {
+                        "titulo1": "Una historia de amor verdadero",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discipulos",
+                            "titulo": "Haga discípulos",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "El generoso será bendecido",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "10 – 16 noviembre",
+                    "lectura": "El Cantar de los Cantares 4:1-16",
+                    "canciones": {
+                        "apertura": 31,
+                        "medio": null,
+                        "cierre": 44
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Oscar San Martin",
+                        "tesoros1": "Gabriel Caballero",
+                        "lecturaEstudiante": "Oscar San Martin",
+                        "maestros": [
+                            { "estudiante": "Micaela Catalan", "ayudante": "Norma Rodriguez" },
+                            { "estudiante": "Mirian Garcia", "ayudante": "Mirta Rozas" },
+                            { "estudiante": "Jacsiel Rodriguez", "ayudante": "" }
+                        ],
+                        "vidaCristiana": ["Jorge Prado", "Gabriel Caballero"],
+                        "conductorEstudio": "Jacsiel Rodriguez",
+                        "lectorEstudio": "Jorge Prado",
+                        "oracionFinal": "Gabriel Caballero"
+                    },
+                    "tesoros": {
+                        "titulo1": "La belleza interior es la más importante",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones. De casa en casa",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones. Predicación informal",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discurso",
+                            "titulo": "Discurso: ¿Prohíbe la Biblia el uso de joyas y maquillaje?",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Los cristianos deben casarse en el Señor",
+                            "duracion": 8
+                        },
+                        {
+                            "titulo": "¿Es usted un buen candidato para casarse?",
+                            "duracion": 7
+                        }
+                    ]
+                },
+                {
+                    "fecha": "17 – 23 noviembre",
+                    "lectura": "El Cantar de los Cantares 7:1-13",
+                    "canciones": {
+                        "apertura": 34,
+                        "medio": null,
+                        "cierre": 51
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Mario Llanos",
+                        "tesoros1": "Jacsiel Rodriguez",
+                        "lecturaEstudiante": "Facundo Vargas",
+                        "maestros": [
+                            { "estudiante": "Ana Jara", "ayudante": "Maria Oyon" },
+                            { "estudiante": "Elena Villegas", "ayudante": "Matilde Esmoli" },
+                            { "estudiante": "Tiziano Di'Ferdinando", "ayudante": "Veronica Di'Ferdinando" },
+                            { "estudiante": "Oscar San Martin", "ayudante": "Caterin San Martin" }
+                        ],
+                        "vidaCristiana": ["Mario Llanos"],
+                        "conductorEstudio": "Gabriel Caballero",
+                        "lectorEstudio": "Oscar San Martin ",
+                        "oracionFinal": "Jacsiel Rodriguez"
+                    },
+                    "tesoros": {
+                        "titulo1": "Sea una muralla, no una puerta",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones. Casa en casa",
+                            "duracion": 2
+                        },
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones. Predicación pública",
+                            "duracion": 2
+                        },
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones. Predicación informal",
+                            "duracion": 2
+                        },
+                        {
+                            "tipo": "explique",
+                            "titulo": "Explique sus creencias. Sobre noviazgo",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Huyan de la inmoralidad sexual",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "24 – 30 noviembre",
+                    "lectura": "Isaías 1, 2",
+                    "canciones": {
+                        "apertura": 44,
+                        "medio": 38,
+                        "cierre": 89
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Jacsiel Rodriguez",
+                        "tesoros1": "Jorge Prado",
+                        "lecturaEstudiante": "Pedro Francisco",
+                        "maestros": [
+                            { "estudiante": "Maria Prado", "ayudante": "Jorge Prado" },
+                            { "estudiante": "Mirta Rozas", "ayudante": "Veronica Martinez" },
+                            { "estudiante": "Mario Llanos", "ayudante": "" }
+                        ],
+                        "vidaCristiana": ["Jacsiel Rodriguez"],
+                        "conductorEstudio": "Mario Llanos",
+                        "lectorEstudio": "Jorge Prado",
+                        "oracionFinal": "Jorge Prado"
+                    },
+                    "tesoros": {
+                        "titulo1": "Una esperanza para quien está \"cargado de culpa\"",
+                        "lecturaBiblica": "Isaías 2:1-11"
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discurso",
+                            "titulo": "Discurso: ¿Qué es el pecado?",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Hazte amigo de Jehová: Jehová perdona",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "1 – 7 diciembre",
+                    "lectura": "Isaías 3-5",
+                    "canciones": {
+                        "apertura": 135,
+                        "medio": 65,
+                        "cierre": 4
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Pedro Francisco",
+                        "tesoros1": "Mario Llanos",
+                        "lecturaEstudiante": "Yamil Vargas",
+                        "maestros": [
+                            { "estudiante": "Pedro Francisco", "ayudante": "Gabriel Caballero" },
+                            { "estudiante": "Caterin San Martin", "ayudante": "Leticia Garcia" },
+                            { "estudiante": "Norma Rodriguez", "ayudante": "Maria Rozas" }
+                        ],
+                        "vidaCristiana": ["Jorge Prado"],
+                        "conductorEstudio": "Jacsiel Rodriguez",
+                        "lectorEstudio": "Gabriel Caballero",
+                        "oracionFinal": "Mario Llanos"
+                    },
+                    "tesoros": {
+                        "titulo1": "Jehová tenía derecho a esperar más de su pueblo",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discipulos",
+                            "titulo": "Haga discípulos",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Necesidades de la congregación",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "8 – 14 diciembre",
+                    "lectura": "Isaías 6-8",
+                    "canciones": {
+                        "apertura": 75,
+                        "medio": 83,
+                        "cierre": 123
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Gabriel Caballero",
+                        "tesoros1": "Jacsiel Rodriguez",
+                        "lecturaEstudiante": "Julian Esmoli",
+                        "maestros": [
+                            { "estudiante": "Jacsiel Rodriguez", "ayudante": "Norma Rodriguez" },
+                            { "estudiante": "Matilde Esmoli", "ayudante": "Mirian Garcia" },
+                            { "estudiante": "Veronica Di'Ferdinando", "ayudante": "Micaela Catalan" }
+                        ],
+                        "vidaCristiana": ["Jorge Prado"],
+                        "conductorEstudio": "Gabriel Caballero",
+                        "lectorEstudio": "Pedro Francisco",
+                        "oracionFinal": "Jacsiel Rodriguez"
+                    },
+                    "tesoros": {
+                        "titulo1": "¡Aquí estoy yo! ¡Envíame a mí!",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "La predicación de casa en casa: nuestro sello distintivo",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "15 – 21 diciembre",
+                    "lectura": "Isaías 9, 10",
+                    "canciones": {
+                        "apertura": 77,
+                        "medio": 95,
+                        "cierre": 92
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Oscar San Martin",
+                        "tesoros1": "Gabriel Caballero",
+                        "lecturaEstudiante": "Oscar San Martin",
+                        "maestros": [
+                            { "estudiante": "Maria Rozas", "ayudante": "Leticia Garcia" },
+                            { "estudiante": "Veronica Vargas", "ayudante": "Delia Moya" },
+                            { "estudiante": "Gabriel Caballero", "ayudante": "Maria Caballero" }
+                        ],
+                        "vidaCristiana": ["Jacsiel Rodriguez", "--"],
+                        "conductorEstudio": "Mario Llanos",
+                        "lectorEstudio": "Oscar San Martin",
+                        "oracionFinal": "Gabriel Caballero"
+                    },
+                    "tesoros": {
+                        "titulo1": "Se profetizó \"una gran luz\"",
+                        "lecturaBiblica": "Isaías 10:1-14"
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "explique",
+                            "titulo": "Explique sus creencias",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "La luz brilla cada vez más",
+                            "duracion": 5
+                        },
+                        {
+                            "titulo": "Logros de la organización para diciembre",
+                            "duracion": 10
+                        }
+                    ]
+                },
+                {
+                    "fecha": "22 – 28 diciembre",
+                    "lectura": "Isaías 11-13",
+                    "canciones": {
+                        "apertura": 14,
+                        "medio": 57,
+                        "cierre": 12
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Julian Esmoli",
+                        "tesoros1": "Jorge Prado",
+                        "lecturaEstudiante": "Tiziano Di'Ferdinando",
+                        "maestros": [
+                            { "estudiante": "Mariela San Martin", "ayudante": "Norma Llanos" },
+                            { "estudiante": "Jacsiel Rodriguez", "ayudante": "Oscar San Martin" },
+                            { "estudiante": "Delia Moya", "ayudante": "Elena Vilegas" }
+                        ],
+                        "vidaCristiana": ["Mario Llanos"],
+                        "conductorEstudio": "Jacsiel Rodriguez",
+                        "lectorEstudio": "Julian Esmoli",
+                        "oracionFinal": "Jorge Prado"
+                    },
+                    "tesoros": {
+                        "titulo1": "¿Cómo sería el Mesías?",
+                        "lecturaBiblica": "Isaías 11:1-12"
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discipulos",
+                            "titulo": "Haga discípulos",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "¿Somos justos cuando juzgamos?",
+                            "duracion": 15
+                        }
+                    ]
+                },
+                {
+                    "fecha": "29 diciembre 2025 – 4 enero 2026",
+                    "lectura": "Isaías 14-16",
+                    "canciones": {
+                        "apertura": 63,
+                        "medio": 2,
+                        "cierre": 21
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Jacsiel Rodriguez",
+                        "tesoros1": "Mario Llanos",
+                        "lecturaEstudiante": "Yamil Vargas",
+                        "maestros": [
+                            { "estudiante": "Julian Esmoli", "ayudante": "Matilde Esmoli" },
+                            { "estudiante": "Idalba Ortiz", "ayudante": "Maria Oyon" },
+                            { "estudiante": "Oscar San Martin", "ayudante": "" }
+                        ],
+                        "vidaCristiana": ["Gabriel Caballero"],
+                        "conductorEstudio": "Jorge Prado",
+                        "lectorEstudio": "Mario Llanos",
+                        "oracionFinal": "Mario Llanos"
+                    },
+                    "tesoros": {
+                        "titulo1": "Los enemigos del pueblo de Dios no se quedan sin castigo",
+                        "lecturaBiblica": "Isaías 16:1-14"
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "empiece",
+                            "titulo": "Empiece conversaciones",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discurso",
+                            "titulo": "Discurso: ¿Qué son las profecías?",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Necesidades de la congregación",
+                            "duracion": 15
+                        }
+                    ]
+                }
+            
+            ]
+}

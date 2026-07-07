@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa para la reunión de entre semana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            font-size: 9pt;
+            line-height: 1.3;
+            color: #000;
+        }
+
+        .container {
+            width: 210mm;
+            margin: 0 auto;
+            background-color: white;
+            padding: 8mm 10mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .page-break .week-separator {
+                border-color: transparent;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 10mm 20mm 10mm 20mm; /* Superior, Derecho, Inferior, Izquierdo */
+            }
+            .save-controls {
+                display: none;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 16pt;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            text-align: right;
+            font-size: 11pt;
+            margin-bottom: 5px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #000;
+            font-weight: normal;
+        }
+
+        .section-header {
+            background-color: #666;
+            color: white;
+            padding: 2px 6px;
+            font-weight: bold;
+            font-size: 9pt;
+            margin-top: 4px;
+            margin-bottom: 2px;
+        }
+
+        .section-header.gold {
+            background-color: #c8a030;
+        }
+
+        .section-header.red {
+            background-color: #8B0000;
+        }
+
+        .row {
+            display: flex;
+            padding: 1px 0;
+            min-height: 14px;
+            align-items: baseline;
+        }
+
+        .time {
+            width: 35px;
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .number {
+            width: 18px;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 4px;
+            font-size: 9pt;
+        }
+
+        .title {
+            flex: 1;
+            font-size: 9pt;
+        }
+
+        .duration {
+            font-size: 8pt;
+            color: #000;
+        }
+
+        .participants {
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            font-size: 9pt;
+        }
+
+        .participant-label {
+            font-size: 8pt;
+            color: #000;
+            margin-right: 3px;
+        }
+
+        .participant-field {
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        .editable {
+            display: inline-block;
+            min-width: 60px;
+            cursor: text;
+        }
+
+        .editable:focus {
+            outline: 1px dotted #333;
+            outline-offset: 1px;
+        }
+
+        .participant-separator {
+            white-space: pre;
+        }
+
+        .bullet {
+            margin-right: 4px;
+        }
+
+        .date-reference {
+            font-weight: bold;
+            font-size: 10pt;
+            margin-bottom: 3px;
+        }
+
+        .footer {
+            text-align: right;
+            font-size: 7pt;
+            margin-top: 8px;
+            color: #666;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .right-labels {
+            text-align: right;
+            font-size: 9pt;
+        }
+
+        .right-labels div {
+            margin-bottom: 1px;
+        }
+
+        .label {
+            font-weight: normal;
+            margin-right: 5px;
+        }
+
+        .week-separator {
+            margin-top: 6px;
+            border-top: 2px solid #000;
+            padding-top: 3px;
+        }
+
+
+
+        .week-block {
+            margin-bottom: 6px;
+        }
+
+        .first-week {
+            margin-top: 0;
+        }
+
+        .save-controls {
+            position: fixed;
+            top: 8mm;
+            right: 10mm;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 5;
+        }
+
+        .save-controls button {
+            background: #1d1d1d;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            font-size: 9pt;
+            cursor: pointer;
+        }
+
+        .save-controls button:hover {
+            background: #333;
+        }
+
+        .save-status {
+            font-size: 8pt;
+            color: #444;
+            min-width: 70px;
+        }
+    </style>
+        <script>
+        const PROGRAMA_JSON = 'programa-completo-nuevo.json';
+        const STORAGE_KEY = 'programaAsignaciones';
+        const SAVE_STATUS_MS = 1500;
+
+        let programData = null;
+
+        function calcularTiempos(inicioMinutos) {
+            const horas = Math.floor(inicioMinutos / 60);
+            const mins = inicioMinutos % 60;
+            return `${horas}:${mins.toString().padStart(2, '0')}`;
+        }
+
+        function editableSpan(valor, path) {
+            const safeValue = valor || '';
+            return `<span class="participant-field editable" contenteditable="true" spellcheck="false" data-path="${path}">${safeValue}</span>`;
+        }
+
+        function actualizarSeparadores() {
+            document.querySelectorAll('.participant-group').forEach((group) => {
+                const fields = group.querySelectorAll('.editable');
+                const separator = group.querySelector('.participant-separator');
+                if (!separator || fields.length < 2) {
+                    return;
+                }
+                const leftValue = fields[0].textContent.trim();
+                const rightValue = fields[1].textContent.trim();
+                separator.style.display = leftValue || rightValue ? 'inline' : 'none';
+            });
+        }
+
+        function generarSemanaHTML(semana, index) {
+            const presidente = programData.rotacion.presidentes[index % programData.rotacion.presidentes.length];
+            const presidentePerlas = programData.rotacion.perlas[index % programData.rotacion.perlas.length];
+            const aperturaNumero = semana.canciones.apertura.numero ?? semana.canciones.apertura;
+            const cierreNumero = semana.canciones.cierre.numero ?? semana.canciones.cierre;
+
+            let tiempo = 1200;
+            const pageBreakClass = index % 3 === 0 ? ' page-break' : '';
+            const firstWeekClass = index === 0 ? ' first-week' : '';
+
+            let html = `
+        <div class="week-block${pageBreakClass}${firstWeekClass}">`;
+
+            if (index === 0) {
+                html += `
+            <h1>Programa para la reuni&oacute;n de entre semana</h1>`;
+            } else {
+                html += `
+            <div class="week-separator">`;
+            }
+
+            html += `
+                <div class="header-row">
+                    <div class="date-reference">${semana.fecha} &mdash; ${semana.lectura}</div>
+                    <div class="right-labels">
+                        <div><span class="label">Presidente:</span> ${presidente}</div>
+                    </div>
+                </div>`;
+
+            if (index !== 0) {
+                html += `
+            </div>`;
+            }
+
+            html += `
+            <div class="row" style="margin-top: 2px;">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title"><span class="bullet">&bull;</span>Canci&oacute;n ${aperturaNumero}</div>
+                <div class="participants">
+                    <div><span class="participant-label">Oraci&oacute;n:</span> ${editableSpan(semana.canciones.apertura.oracion, `semanas.${index}.canciones.apertura.oracion`)}</div>
+                </div>
+            </div>`;
+
+            tiempo += 5;
+
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title"><span class="bullet">&bull;</span>Palabras de introducci&oacute;n <span class="duration">(1 min.)</span></div>
+            </div>`;
+
+            tiempo += 1;
+
+            html += `
+            <div class="section-header">TESOROS DE LA BIBLIA</div>`;
+
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="number">1.</div>
+                <div class="title">${semana.tesoros.titulo1.titulo} <span class="duration">(10 mins.)</span></div>
+                <div class="participants">${editableSpan(semana.tesoros.titulo1.asignado, `semanas.${index}.tesoros.titulo1.asignado`)}</div>
+            </div>`;
+
+            tiempo += 10;
+
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="number">2.</div>
+                <div class="title">Busquemos perlas escondidas <span class="duration">(10 mins.)</span></div>
+                <div class="participants">${presidentePerlas}</div>
+            </div>`;
+
+            tiempo += 10;
+
+            const lecturaTexto = semana.tesoros.lecturaBiblica.texto ? `: ${semana.tesoros.lecturaBiblica.texto}` : '';
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="number">3.</div>
+                <div class="title">Lectura de la Biblia${lecturaTexto} <span class="duration">(4 mins.)</span></div>
+                <div class="participants">
+                    <div><span class="participant-label">Estudiante:</span> ${editableSpan(semana.tesoros.lecturaBiblica.estudiante, `semanas.${index}.tesoros.lecturaBiblica.estudiante`)}</div>
+                </div>
+            </div>`;
+
+            tiempo += 4;
+
+            html += `
+            <div class="section-header gold">SEAMOS MEJORES MAESTROS</div>`;
+
+            semana.mejoresMaestros.forEach((maestro, idx) => {
+                const participantHtml = maestro.tipo === 'discurso'
+                    ? `<div><span class="participant-label">Estudiante:</span> ${editableSpan(maestro.estudiante, `semanas.${index}.mejoresMaestros.${idx}.estudiante`)}</div>`
+                    : `<div class="participant-group">
+                        <span class="participant-label">Estudiante/Ayudante:</span>
+                        ${editableSpan(maestro.estudiante, `semanas.${index}.mejoresMaestros.${idx}.estudiante`)}
+                        <span class="participant-separator"> / </span>
+                        ${editableSpan(maestro.ayudante, `semanas.${index}.mejoresMaestros.${idx}.ayudante`)}
+                    </div>`;
+                html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="number">${4 + idx}.</div>
+                <div class="title">${maestro.titulo} <span class="duration">(${maestro.duracion} mins.)</span></div>
+                <div class="participants">
+                    ${participantHtml}
+                </div>
+            </div>`;
+
+                tiempo += maestro.duracion;
+            });
+
+            html += `
+            <div class="section-header red">NUESTRA VIDA CRISTIANA</div>`;
+
+            if (semana.canciones.medio) {
+                html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title"><span class="bullet">&bull;</span>Canci&oacute;n ${semana.canciones.medio}</div>
+            </div>`;
+                tiempo += 3;
+            }
+
+            semana.vidaCristiana.forEach((item, idx) => {
+                html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title">${item.titulo} <span class="duration">(${item.duracion} mins.)</span></div>
+                <div class="participants">${editableSpan(item.asignado, `semanas.${index}.vidaCristiana.${idx}.asignado`)}</div>
+            </div>`;
+                tiempo += item.duracion;
+            });
+
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title">Estudio b&iacute;blico de la congregaci&oacute;n <span class="duration">(30 mins.)</span></div>
+                <div class="participants">
+                    <div class="participant-group">
+                        <span class="participant-label">Conductor/Lector:</span>
+                        ${editableSpan(semana.estudioBiblico.conductor, `semanas.${index}.estudioBiblico.conductor`)}
+                        <span class="participant-separator"> / </span>
+                        ${editableSpan(semana.estudioBiblico.lector, `semanas.${index}.estudioBiblico.lector`)}
+                    </div>
+                </div>
+            </div>`;
+
+            tiempo += 30;
+
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title"><span class="bullet">&bull;</span>Palabras de conclusi&oacute;n <span class="duration">(3 min.)</span></div>
+            </div>`;
+
+            tiempo += 3;
+
+            html += `
+            <div class="row">
+                <div class="time">${calcularTiempos(tiempo)}</div>
+                <div class="title"><span class="bullet">&bull;</span>Canci&oacute;n ${cierreNumero}</div>
+                <div class="participants">
+                    <div><span class="participant-label">Oraci&oacute;n:</span> ${editableSpan(semana.canciones.cierre.oracion, `semanas.${index}.canciones.cierre.oracion`)}</div>
+                </div>
+            </div>
+        </div>`;
+
+            return html;
+        }
+
+        function obtenerAsignacionesGuardadas(version) {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) {
+                    return null;
+                }
+                const parsed = JSON.parse(raw);
+                if (!parsed || parsed.version !== version || typeof parsed.asignaciones !== 'object') {
+                    return null;
+                }
+                return parsed.asignaciones;
+            } catch (error) {
+                console.warn('No se pudo leer localStorage.', error);
+                return null;
+            }
+        }
+
+        function aplicarAsignacionesGuardadas(asignaciones) {
+            if (!asignaciones) {
+                return;
+            }
+            document.querySelectorAll('.editable[data-path]').forEach((el) => {
+                const value = asignaciones[el.dataset.path];
+                if (value !== undefined) {
+                    el.textContent = value;
+                }
+            });
+        }
+
+        function recolectarAsignaciones() {
+            const asignaciones = {};
+            document.querySelectorAll('.editable[data-path]').forEach((el) => {
+                asignaciones[el.dataset.path] = el.textContent.trim();
+            });
+            return asignaciones;
+        }
+
+        function mostrarEstadoGuardado(texto) {
+            const status = document.getElementById('save-status');
+            if (!status) {
+                return;
+            }
+            status.textContent = texto;
+            if (texto) {
+                setTimeout(() => {
+                    status.textContent = '';
+                }, SAVE_STATUS_MS);
+            }
+        }
+
+        async function cargarPrograma() {
+            const container = document.querySelector('.container');
+            const response = await fetch(PROGRAMA_JSON, { cache: 'no-store' });
+            if (!response.ok) {
+                throw new Error(`No se pudo cargar ${PROGRAMA_JSON}`);
+            }
+
+            programData = await response.json();
+            let html = '';
+
+            programData.semanas.forEach((semana, index) => {
+                html += generarSemanaHTML(semana, index);
+            });
+
+            html += `<div class="footer">S-140-S  11/23</div>`;
+            container.innerHTML = html;
+
+            aplicarAsignacionesGuardadas(obtenerAsignacionesGuardadas(programData.version));
+            actualizarSeparadores();
+
+            container.addEventListener('input', (event) => {
+                if (event.target.classList.contains('editable')) {
+                    actualizarSeparadores();
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const saveButton = document.getElementById('save-button');
+            if (saveButton) {
+                saveButton.addEventListener('click', () => {
+                    if (!programData) {
+                        return;
+                    }
+                    const asignaciones = recolectarAsignaciones();
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                        version: programData.version,
+                        asignaciones
+                    }));
+                    mostrarEstadoGuardado('Guardado');
+                });
+            }
+
+            cargarPrograma().catch((error) => {
+                const container = document.querySelector('.container');
+                container.textContent = 'No se pudo cargar el programa.';
+                console.error(error);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="save-controls">
+        <button id="save-button" type="button">Guardar cambios</button>
+        <span id="save-status" class="save-status" aria-live="polite"></span>
+    </div>
+    <div class="container">
+        <!-- El contenido se generará dinámicamente -->
+    </div>
+</body>
+</html>

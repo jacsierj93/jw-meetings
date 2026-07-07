@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ncx version="2005-1" xml:lang="es" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+<head>
+<meta name="dtb:uid" content="urn:uuid:9BD29199-2670-4091-8EE5-954A045F44EE"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle>
+<text>Guía de actividades, enero y febrero de 2026</text>
+</docTitle>
+<docAuthor>
+<text>WATCHTOWER</text>
+</docAuthor>
+<navMap>
+<navPoint class="chapter" id="chapter1" playOrder="1">
+<navLabel><text>Guía de actividades para la reunión Vida y Ministerio Cristianos (enero y febrero de 2026)</text></navLabel>
+<content src="202026000.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter2" playOrder="2">
+<navLabel><text>5-11 de enero</text></navLabel>
+<content src="202026001.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter3" playOrder="3">
+<navLabel><text>12-18 de enero</text></navLabel>
+<content src="202026002.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter4" playOrder="4">
+<navLabel><text>19-25 de enero</text></navLabel>
+<content src="202026003.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter5" playOrder="5">
+<navLabel><text>26 de enero a 1 de febrero</text></navLabel>
+<content src="202026004.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter6" playOrder="6">
+<navLabel><text>2-8 de febrero</text></navLabel>
+<content src="202026005.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter7" playOrder="7">
+<navLabel><text>9-15 de febrero</text></navLabel>
+<content src="202026006.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter8" playOrder="8">
+<navLabel><text>16-22 de febrero</text></navLabel>
+<content src="202026007.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter9" playOrder="9">
+<navLabel><text>23 de febrero a 1 de marzo</text></navLabel>
+<content src="202026008.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter10" playOrder="10">
+<navLabel><text>Navegación por página</text></navLabel>
+<content src="pagenav0.xhtml"/>
+</navPoint>
+</navMap>
+<pageList id="page-mapping" class="pagenavnum">
+<navLabel><text>Navegación por página</text></navLabel>
+<pageTarget id="page-1" value="1" type="normal" playOrder="11">
+<navLabel><text>1</text></navLabel>
+<content src="202026000.xhtml#page1"/>
+</pageTarget>
+<pageTarget id="page-2" value="2" type="normal" playOrder="12">
+<navLabel><text>2</text></navLabel>
+<content src="202026000.xhtml#page2"/>
+</pageTarget>
+<pageTarget id="page-3" value="3" type="normal" playOrder="13">
+<navLabel><text>3</text></navLabel>
+<content src="202026001.xhtml#page3"/>
+</pageTarget>
+<pageTarget id="page-4" value="4" type="normal" playOrder="14">
+<navLabel><text>4</text></navLabel>
+<content src="202026002.xhtml#page4"/>
+</pageTarget>
+<pageTarget id="page-5" value="5" type="normal" playOrder="15">
+<navLabel><text>5</text></navLabel>
+<content src="202026002.xhtml#page5"/>
+</pageTarget>
+<pageTarget id="page-6" value="6" type="normal" playOrder="16">
+<navLabel><text>6</text></navLabel>
+<content src="202026003.xhtml#page6"/>
+</pageTarget>
+<pageTarget id="page-7" value="7" type="normal" playOrder="17">
+<navLabel><text>7</text></navLabel>
+<content src="202026003.xhtml#page7"/>
+</pageTarget>
+<pageTarget id="page-8" value="8" type="normal" playOrder="18">
+<navLabel><text>8</text></navLabel>
+<content src="202026004.xhtml#page8"/>
+</pageTarget>
+<pageTarget id="page-9" value="9" type="normal" playOrder="19">
+<navLabel><text>9</text></navLabel>
+<content src="202026004.xhtml#page9"/>
+</pageTarget>
+<pageTarget id="page-10" value="10" type="normal" playOrder="20">
+<navLabel><text>10</text></navLabel>
+<content src="202026005.xhtml#page10"/>
+</pageTarget>
+<pageTarget id="page-11" value="11" type="normal" playOrder="21">
+<navLabel><text>11</text></navLabel>
+<content src="202026006.xhtml#page11"/>
+</pageTarget>
+<pageTarget id="page-12" value="12" type="normal" playOrder="22">
+<navLabel><text>12</text></navLabel>
+<content src="202026007.xhtml#page12"/>
+</pageTarget>
+<pageTarget id="page-13" value="13" type="normal" playOrder="23">
+<navLabel><text>13</text></navLabel>
+<content src="202026007.xhtml#page13"/>
+</pageTarget>
+<pageTarget id="page-14" value="14" type="normal" playOrder="24">
+<navLabel><text>14</text></navLabel>
+<content src="202026008.xhtml#page14"/>
+</pageTarget>
+<pageTarget id="page-15" value="15" type="normal" playOrder="25">
+<navLabel><text>15</text></navLabel>
+<content src="202026008.xhtml#page15"/>
+</pageTarget>
+<pageTarget id="page-16" value="16" type="normal" playOrder="26">
+<navLabel><text>16</text></navLabel>
+<content src="202026000.xhtml#page16"/>
+</pageTarget>
+</pageList>
+</ncx>

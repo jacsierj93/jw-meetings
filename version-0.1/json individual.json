@@ -1,0 +1,50 @@
+{
+                    "fecha": "27 octubre – 2 noviembre",
+                    "lectura": "Eclesiastés 11, 12",
+                    "canciones": {
+                        "apertura": 155,
+                        "medio": 111,
+                        "cierre": 8
+                    },
+                    "asignaciones": {
+                        "oracionInicial": "Jorge Prado",
+                        "tesoros1": "Mario Llanos",
+                        "lecturaEstudiante": "Tiziano Di'Ferdinando",
+                        "maestros": [
+                            { "estudiante": "Maria Rozas", "ayudante": "Caterin San Martin" },
+                            { "estudiante": "Delia Moya", "ayudante": "Ana Jara" },
+                            { "estudiante": "Oscar San Martin", "ayudante": "" }
+                        ],
+                        "vidaCristiana": ["Jacsiel Rodriguez"],
+                        "conductorEstudio": "Jorge Prado",
+                        "lectorEstudio": "Mario Llanos",
+                        "oracionFinal": "Mario Llanos"
+                    },
+                    "tesoros": {
+                        "titulo1": "Disfrute de una vida feliz y saludable",
+                        "lecturaBiblica": null
+                    },
+                    "mejoresMaestros": [
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas. De casa en casa",
+                            "duracion": 3
+                        },
+                        {
+                            "tipo": "revisita",
+                            "titulo": "Haga revisitas. Predicación informal",
+                            "duracion": 4
+                        },
+                        {
+                            "tipo": "discurso",
+                            "titulo": "Discurso",
+                            "duracion": 5
+                        }
+                    ],
+                    "vidaCristiana": [
+                        {
+                            "titulo": "Necesidades de la congregación",
+                            "duracion": 15
+                        }
+                    ]
+                }

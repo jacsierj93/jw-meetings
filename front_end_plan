@@ -1,0 +1,423 @@
+Plan de Implementación - Frontend Web Application
+Sistema web para gestionar programas de reuniones con interfaz moderna Material Design y múltiples vistas de asignación.
+
+User Review Required
+IMPORTANT
+
+Integración con Docker Compose
+
+El frontend se integrará como un servicio más en el Docker Compose existente:
+
+Frontend (React + Vite) en puerto 5173
+Backend (FastAPI) en puerto 8000
+PostgreSQL en puerto 5432
+Todo se levanta con un solo docker-compose up
+IMPORTANT
+
+Estructura del Proyecto
+
+jw_scrapping/
+├── jw-meeting-backend/     # Backend FastAPI
+│   ├── src/
+│   ├── migrations/
+│   ├── Dockerfile
+│   └── requirements.txt
+├── jw-meeting-frontend/    # Frontend React
+│   ├── src/
+│   ├── Dockerfile
+│   └── package.json
+└── docker-compose.yml      # Orquesta todo
+IMPORTANT
+
+Stack Tecnológico: React + Vite + Material-UI
+
+Se propone usar React con Vite y Material-UI por:
+
+Desarrollo rápido con hot reload
+Material Design consistente y profesional
+Componentes listos para usar (tablas, formularios, diálogos)
+Fácil integración con el backend FastAPI
+Excelente para aplicaciones SPA
+TypeScript para mayor seguridad
+IMPORTANT
+
+Vistas de Asignación: 3 Modos
+
+Vista Grid - Tabla simple con filtros
+Vista Matriz - Estilo Excel con personas en columnas y semanas en filas
+Vista Programa Interactiva - Formato idéntico al HTML actual pero editable en línea
+WARNING
+
+Generación de PDF para Impresión
+
+Para generar el programa imprimible con formato idéntico al HTML:
+
+Opción 1: Usar la misma plantilla HTML + CSS (recomendado)
+Opción 2: Generar PDF en backend con reportlab/weasyprint
+Opción 3: Print CSS + window.print() del navegador
+Proposed Changes
+Estructura del Proyecto Frontend
+jw-meeting-frontend/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── api/
+│   │   ├── client.ts              # Axios/Fetch client
+│   │   ├── congregations.ts       # API calls
+│   │   ├── persons.ts
+│   │   ├── programs.ts
+│   │   └── assignments.ts
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   └── Layout.tsx
+│   │   ├── congregation/
+│   │   │   ├── CongregationForm.tsx
+│   │   │   └── CongregationList.tsx
+│   │   ├── person/
+│   │   │   ├── PersonForm.tsx
+│   │   │   └── PersonList.tsx
+│   │   ├── program/
+│   │   │   ├── EpubUploader.tsx
+│   │   │   ├── ProgramList.tsx
+│   │   │   └── WeekCard.tsx
+│   │   ├── assignments/
+│   │   │   ├── GridView.tsx        # Vista tabla
+│   │   │   ├── MatrixView.tsx      # Vista matriz
+│   │   │   ├── ProgramView.tsx     # Vista programa
+│   │   │   └── AssignmentCell.tsx
+│   │   └── print/
+│   │       └── PrintableProgram.tsx
+│   ├── pages/
+│   │   ├── Dashboard.tsx
+│   │   ├── CongregationPage.tsx
+│   │   ├── PersonsPage.tsx
+│   │   ├── ProgramsPage.tsx
+│   │   ├── ImportPage.tsx
+│   │   ├── AssignmentsPage.tsx
+│   │   └── PrintPage.tsx
+│   ├── hooks/
+│   │   ├── useApi.ts
+│   │   ├── useCongregation.ts
+│   │   └── useProgram.ts
+│   ├── types/
+│   │   ├── congregation.ts
+│   │   ├── person.ts
+│   │   ├── program.ts
+│   │   └── assignment.ts
+│   ├── utils/
+│   │   ├── formatters.ts
+│   │   └── validators.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── package.json
+├── vite.config.ts
+└── tsconfig.json
+Características Principales
+1. Dashboard
+Resumen general:
+
+Congregación activa
+Programa actual
+Próximas asignaciones
+Estadísticas rápidas
+2. Gestión de Congregación
+Funcionalidades:
+
+Crear/editar congregación
+Configuración (nombre, ajustes)
+Solo una congregación activa a la vez (simplificado)
+UI:
+
+┌─────────────────────────────────────┐
+│ Configuración de Congregación       │
+├─────────────────────────────────────┤
+│ Nombre: [Mayor Buratovich        ] │
+│                                     │
+│ Configuración adicional (JSON):    │
+│ ┌─────────────────────────────────┐ │
+│ │ {                               │ │
+│ │   "timezone": "America/..."     │ │
+│ │ }                               │ │
+│ └─────────────────────────────────┘ │
+│                                     │
+│ [Guardar]                           │
+└─────────────────────────────────────┘
+3. Gestión de Personas
+Funcionalidades:
+
+Listar todas las personas
+Agregar/editar/desactivar personas
+Búsqueda y filtros
+Importar desde CSV (futuro)
+UI - Lista:
+
+┌─────────────────────────────────────────────────────┐
+│ Personas                          [+ Nueva Persona] │
+├─────────────────────────────────────────────────────┤
+│ 🔍 [Buscar...]                                      │
+├──────────────┬──────────────┬──────────┬───────────┤
+│ Nombre       │ Email        │ Estado   │ Acciones  │
+├──────────────┼──────────────┼──────────┼───────────┤
+│ Juan Pérez   │ juan@...     │ ✓ Activo │ [✏️] [🗑️] │
+│ María García │ maria@...    │ ✓ Activo │ [✏️] [🗑️] │
+└──────────────┴──────────────┴──────────┴───────────┘
+4. Importar Programa desde EPUB
+Funcionalidades:
+
+Upload de archivo EPUB
+Seleccionar fechas de inicio/fin
+Preview de semanas detectadas
+Importación con progreso
+UI:
+
+┌─────────────────────────────────────┐
+│ Importar Programa desde EPUB        │
+├─────────────────────────────────────┤
+│ 1. Seleccionar archivo EPUB         │
+│    ┌──────────────────────────────┐ │
+│    │ 📁 Arrastra o haz clic       │ │
+│    │    para seleccionar          │ │
+│    └──────────────────────────────┘ │
+│                                     │
+│ 2. Información del programa         │
+│    Versión: [2026-01            ]  │
+│    Inicio:  [2026-01-01         ]  │
+│    Fin:     [2026-01-31         ]  │
+│                                     │
+│ 3. Preview                          │
+│    ✓ 4 semanas detectadas           │
+│    ✓ 56 asignaciones creadas        │
+│                                     │
+│ [Importar Programa]                 │
+└─────────────────────────────────────┘
+5. Vista de Asignaciones - Grid
+Funcionalidades:
+
+Tabla con todas las asignaciones
+Filtros por semana, tipo, persona
+Edición inline
+Reasignación rápida
+UI:
+
+┌─────────────────────────────────────────────────────────────┐
+│ Asignaciones                    [Grid] [Matriz] [Programa]  │
+├─────────────────────────────────────────────────────────────┤
+│ Filtros: Semana [Todas ▼] Tipo [Todos ▼]                   │
+├──────┬────────────────────┬──────────┬──────────┬──────────┤
+│ Sem. │ Asignación         │ Tipo     │ Asignado │ Ayudante │
+├──────┼────────────────────┼──────────┼──────────┼──────────┤
+│ 1    │ Discurso Tesoros   │ Tesoros  │ [Juan ▼] │          │
+│ 1    │ Lectura Bíblica    │ Tesoros  │ [María▼] │          │
+│ 1    │ Empiece conv...    │ Minister │ [Pedro▼] │ [Ana ▼]  │
+└──────┴────────────────────┴──────────┴──────────┴──────────┘
+6. Vista de Asignaciones - Matriz
+Funcionalidades:
+
+Estilo Excel/Google Sheets
+Personas en columnas, semanas en filas
+Drag & drop para asignar
+Vista panorámica de todo el mes
+UI:
+
+┌─────────────────────────────────────────────────────────────┐
+│ Vista Matriz                    [Grid] [Matriz] [Programa]  │
+├─────────────────────────────────────────────────────────────┤
+│        │ Juan P. │ María G. │ Pedro L. │ Ana M. │ ...      │
+├────────┼─────────┼──────────┼──────────┼────────┼──────────┤
+│ Sem 1  │ Tesoros │ Lectura  │ Empiece  │ Ayud.  │          │
+│        │ Oración │          │          │        │          │
+├────────┼─────────┼──────────┼──────────┼────────┼──────────┤
+│ Sem 2  │         │ Tesoros  │ Revisita │ Ayud.  │ Lectura  │
+│        │         │ Oración  │          │        │          │
+└────────┴─────────┴──────────┴──────────┴────────┴──────────┘
+7. Vista de Asignaciones - Programa Interactivo
+Funcionalidades:
+
+Formato IDÉNTICO al HTML actual
+Campos editables inline (contenteditable)
+Navegación por semanas
+Auto-guardado
+UI:
+
+Usa exactamente el mismo CSS del HTML actual
+Campos con contenteditable="true"
+Click para editar, blur para guardar
+Indicador de guardado automático
+8. Generación para Impresión
+Funcionalidades:
+
+Generar HTML con formato original
+CSS optimizado para impresión (@media print)
+Exportar a PDF
+Saltos de página automáticos
+Implementación:
+
+// Opción 1: Reutilizar template HTML actual
+function generatePrintableHTML(program, assignments) {
+  // Usar exactamente el mismo código del HTML actual
+  // Inyectar datos desde el backend
+  // Aplicar CSS de impresión
+}
+// Opción 2: Endpoint en backend
+POST /api/v1/programs/{id}/export/pdf
+Response: application/pdf
+Stack Tecnológico
+Frontend Core
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "axios": "^1.6.0",
+    "@tanstack/react-query": "^5.0.0",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0",
+    "typescript": "^5.3.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  }
+}
+Material-UI
+{
+  "dependencies": {
+    "@mui/material": "^5.15.0",
+    "@mui/icons-material": "^5.15.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/x-data-grid": "^6.18.0",
+    "notistack": "^3.0.0",
+    "react-dropzone": "^14.2.0"
+  }
+}
+Styling
+Material-UI (MUI) - Material Design components
+Emotion - CSS-in-JS (incluido con MUI)
+Custom CSS - Para vista de impresión (reutilizar del HTML actual)
+Flujo de Usuario
+Flujo Inicial (Primera Vez)
+Configurar Congregación
+
+Crear congregación "Mayor Buratovich"
+Guardar configuración
+Agregar Personas
+
+Agregar hermanos/hermanas
+Marcar habilidades (futuro)
+Importar Programa
+
+Subir EPUB
+Confirmar importación
+Ver preview de asignaciones creadas
+Asignar Responsables
+
+Usar vista preferida (Grid/Matriz/Programa)
+Asignar personas a cada tarea
+Guardar cambios
+Generar para Imprimir
+
+Ir a vista de impresión
+Revisar formato
+Imprimir o exportar PDF
+Flujo Semanal (Uso Regular)
+Abrir aplicación
+Ver dashboard con próximas asignaciones
+Hacer ajustes si es necesario
+Generar programa actualizado
+Imprimir
+Componentes Clave
+PrintableProgram Component
+interface PrintableProgramProps {
+  program: Program;
+  weeks: Week[];
+  assignments: Assignment[];
+}
+// Reutiliza exactamente el CSS y estructura del HTML actual
+// Genera el mismo formato para impresión
+MatrixView Component
+interface MatrixViewProps {
+  weeks: Week[];
+  persons: Person[];
+  assignments: Assignment[];
+  onAssign: (assignmentId, personId) => void;
+}
+// Vista tipo Excel con drag & drop
+EpubUploader Component
+interface EpubUploaderProps {
+  congregationId: string;
+  onSuccess: (program: Program) => void;
+}
+// Maneja upload y muestra progreso
+API Integration
+Endpoints a Usar
+// Congregations
+GET    /api/v1/programs/congregations
+POST   /api/v1/programs/congregations
+// Persons
+GET    /api/v1/programs/persons?congregation_id={id}
+POST   /api/v1/programs/persons
+// Programs
+POST   /api/v1/programs/import
+GET    /api/v1/programs?congregation_id={id}
+GET    /api/v1/programs/{id}
+GET    /api/v1/programs/{id}/weeks
+// Assignments
+GET    /api/v1/assignments/week/{week_id}
+POST   /api/v1/assignments/{id}/reassign
+Verification Plan
+Desarrollo
+Setup inicial
+
+npm create vite@latest jw-meeting-frontend -- --template react-ts
+cd jw-meeting-frontend
+npm install
+Instalar Material-UI
+
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material @mui/x-data-grid
+npm install notistack axios @tanstack/react-query zustand
+Implementar componentes básicos
+
+Layout con AppBar y Drawer (MUI)
+Navegación con Material Design
+Formularios con TextField, Select, etc.
+Integrar con API
+
+Configurar axios
+Implementar hooks
+Manejar estados
+Implementar vistas de asignación
+
+Grid view
+Matrix view
+Program view
+Implementar impresión
+
+Reutilizar CSS del HTML
+Generar formato idéntico
+Probar impresión
+Testing Manual
+ Crear congregación
+ Agregar personas
+ Importar EPUB
+ Asignar en vista Grid
+ Asignar en vista Matriz
+ Asignar en vista Programa
+ Generar para impresión
+ Verificar formato idéntico al HTML original
+ Imprimir PDF
+Próximos Pasos
+Crear proyecto Vite + React + TypeScript
+Configurar Tailwind CSS
+Implementar layout y navegación
+Crear páginas principales
+Integrar con backend
+Implementar vistas de asignación
+Implementar generación para impresión
+Testing y refinamiento
+¿Procedemos con la implementación?

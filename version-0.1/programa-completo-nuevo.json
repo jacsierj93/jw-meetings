@@ -1,0 +1,523 @@
+{
+  "version": "2026-01-01",
+  "congregacion": "Mayor Buratovich",
+  "rotacion": {
+    "presidentes": [
+      "Mario Llanos",
+      "Jorge Prado",
+      "Gabriel Caballero",
+      "Jacsiel Rodriguez"
+    ],
+    "perlas": [
+      "Mario Llanos",
+      "Jorge Prado",
+      "Gabriel Caballero",
+      "Jacsiel Rodriguez"
+    ]
+  },
+  "semanas": [
+    {
+      "fecha": "5-11 DE ENERO",
+      "lectura": "Isa\u00edas 17-20",
+      "canciones": {
+        "apertura": {
+          "numero": 153,
+          "oracion": ""
+        },
+        "medio": 148,
+        "cierre": {
+          "numero": 73,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "\u201cLo que van a recibir quienes nos despojan\u201d",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 19:1-12",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. De casa en casa",
+          "duracion": 3,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "discurso",
+          "titulo": "Discurso: Dios quiere que le oremos",
+          "duracion": 5,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "Acu\u00e9rdate de \u201cla Roca de tu fortaleza\u201d",
+          "duracion": 10,
+          "asignado": ""
+        },
+        {
+          "titulo": "Esforc\u00e9monos por aprender de los amigos de Jehov\u00e1 todos los d\u00edas",
+          "duracion": 5,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "12-18 DE ENERO",
+      "lectura": "Isa\u00edas 21-23",
+      "canciones": {
+        "apertura": {
+          "numero": 120,
+          "oracion": ""
+        },
+        "medio": 124,
+        "cierre": {
+          "numero": 3,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "Qu\u00e9 aprendemos de lo que le pas\u00f3 a Sebn\u00e1",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 23:1-14",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n informal",
+          "duracion": 1,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. De casa en casa",
+          "duracion": 3,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 2,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "discurso",
+          "titulo": "Discurso: \u00bfA qui\u00e9n me gustar\u00eda parecerme? Durante el discurso, use la imagen",
+          "duracion": 5,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "Necesidades de la congregaci\u00f3n",
+          "duracion": 15,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "19-25 DE ENERO",
+      "lectura": "Isa\u00edas 24-27",
+      "canciones": {
+        "apertura": {
+          "numero": 159,
+          "oracion": ""
+        },
+        "medio": 144,
+        "cierre": {
+          "numero": 53,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "\u201c\u00a1Este es nuestro Dios!\u201d",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 25:1-9",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n p\u00fablica",
+          "duracion": 3,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "explique",
+          "titulo": "Explique sus creencias. Escenificaci\u00f3n",
+          "duracion": 5,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "Apoy\u00e9monos en Jehov\u00e1 y prepar\u00e9monos para cuando necesitemos atenci\u00f3n m\u00e9dica o una operaci\u00f3n",
+          "duracion": 15,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "26 DE ENERO A 1 DE FEBRERO",
+      "lectura": "Isa\u00edas 28, 29",
+      "canciones": {
+        "apertura": {
+          "numero": 28,
+          "oracion": ""
+        },
+        "medio": 89,
+        "cierre": {
+          "numero": 55,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "No honremos a Jehov\u00e1 solo de labios para afuera",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 29:13-24",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n informal",
+          "duracion": 2,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 3,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "discipulos",
+          "titulo": "Haga disc\u00edpulos. De casa en casa",
+          "duracion": 2,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "discipulos",
+          "titulo": "Haga disc\u00edpulos. lff lecci\u00f3n 18 puntos 6, 7",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "\u201cYo siempre hago lo que a \u00e9l le agrada\u201d",
+          "duracion": 8,
+          "asignado": ""
+        },
+        {
+          "titulo": "Necesidades de la congregaci\u00f3n",
+          "duracion": 7,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "2-8 DE FEBRERO",
+      "lectura": "Isa\u00edas 30-32",
+      "canciones": {
+        "apertura": {
+          "numero": 8,
+          "oracion": ""
+        },
+        "medio": 157,
+        "cierre": {
+          "numero": 133,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "Busquemos refugio bajo las alas de Jehov\u00e1",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 31:1-9",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n informal",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. De casa en casa",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "\u201cEl resultado de la verdadera rectitud ser\u00e1 paz\u201d (fragmento)",
+          "duracion": 15,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "9-15 DE FEBRERO",
+      "lectura": "Isa\u00edas 33-35",
+      "canciones": {
+        "apertura": {
+          "numero": 3,
+          "oracion": ""
+        },
+        "medio": 41,
+        "cierre": {
+          "numero": 23,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "\u201c\u00c9l es la estabilidad de tus tiempos\u201d",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 35:1-10",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n p\u00fablica",
+          "duracion": 3,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "discurso",
+          "titulo": "Discurso: La Biblia nos ense\u00f1a a orar",
+          "duracion": 5,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "Necesidades de la congregaci\u00f3n",
+          "duracion": 15,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "16-22 DE FEBRERO",
+      "lectura": "Isa\u00edas 36, 37",
+      "canciones": {
+        "apertura": {
+          "numero": 150,
+          "oracion": ""
+        },
+        "medio": 118,
+        "cierre": {
+          "numero": 9,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "\u201cNo tengas miedo por las palabras que has o\u00eddo\u201d",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 37:14-23",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. De casa en casa",
+          "duracion": 3,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n informal",
+          "duracion": 4,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "explique",
+          "titulo": "Explique sus creencias. Escenificaci\u00f3n",
+          "duracion": 5,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "\u201c\u00bfPor qu\u00e9 est\u00e1n tan confiados?\u201d",
+          "duracion": 15,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    },
+    {
+      "fecha": "23 DE FEBRERO A 1 DE MARZO",
+      "lectura": "Isa\u00edas 38-40",
+      "canciones": {
+        "apertura": {
+          "numero": 4,
+          "oracion": ""
+        },
+        "medio": 160,
+        "cierre": {
+          "numero": 161,
+          "oracion": ""
+        }
+      },
+      "tesoros": {
+        "titulo1": {
+          "titulo": "\u201cCuidar\u00e1 de su reba\u00f1o como un pastor\u201d",
+          "asignado": ""
+        },
+        "lecturaBiblica": {
+          "texto": "Isa\u00edas 40:21-31",
+          "estudiante": ""
+        }
+      },
+      "mejoresMaestros": [
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n informal",
+          "duracion": 2,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "empiece",
+          "titulo": "Empiece conversaciones. Predicaci\u00f3n informal",
+          "duracion": 2,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "revisita",
+          "titulo": "Haga revisitas. De casa en casa",
+          "duracion": 2,
+          "estudiante": "",
+          "ayudante": ""
+        },
+        {
+          "tipo": "discipulos",
+          "titulo": "Haga disc\u00edpulos. lff lecci\u00f3n 18 resumen, repaso y \u201cProp\u00f3ngase esto\u201d",
+          "duracion": 5,
+          "estudiante": "",
+          "ayudante": ""
+        }
+      ],
+      "vidaCristiana": [
+        {
+          "titulo": "Informe de servicio anual",
+          "duracion": 15,
+          "asignado": ""
+        }
+      ],
+      "estudioBiblico": {
+        "conductor": "",
+        "lector": ""
+      }
+    }
+  ]
+}

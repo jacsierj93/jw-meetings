@@ -1,0 +1,3 @@
+# Data directory for EPUB files and other resources
+*.epub
+*.json

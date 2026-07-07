@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas de Asignación - Generadas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 10mm;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+            max-width: 190mm;
+            margin: 0 auto;
+        }
+
+        .card {
+            width: 91mm;
+            height: 135mm;
+            border: 2px solid #000;
+            padding: 4mm;
+            background-color: white;
+            page-break-inside: avoid;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 11pt;
+            line-height: 1.2;
+            margin-bottom: 4mm;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2mm;
+        }
+
+        .field {
+            margin-bottom: 3mm;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .field-label {
+            font-weight: bold;
+            font-size: 10pt;
+            margin-right: 2mm;
+            white-space: nowrap;
+        }
+
+        .field-line {
+            flex: 1;
+            border-bottom: 1px dotted #000;
+            height: 14px;
+            padding-left: 2mm;
+            font-size: 9pt;
+        }
+
+        .checkbox-section {
+            margin: 4mm 0;
+        }
+
+        .checkbox-title {
+            font-weight: bold;
+            font-size: 10pt;
+            margin-bottom: 2mm;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5mm;
+            font-size: 10pt;
+        }
+
+        .checkbox {
+            width: 4mm;
+            height: 4mm;
+            border: 1px solid #000;
+            margin-right: 2mm;
+            display: inline-block;
+            position: relative;
+        }
+
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: -2px;
+            left: 0.3mm;
+            font-size: 12pt;
+            font-weight: bold;
+        }
+
+        .note-section {
+            margin-top: auto;
+            font-size: 8pt;
+            line-height: 1.3;
+            padding-top: 3mm;
+            border-top: 1px solid #ccc;
+        }
+
+        .note-title {
+            font-weight: bold;
+            margin-bottom: 1mm;
+        }
+
+        .note-text {
+            text-align: justify;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: right;
+            font-size: 7pt;
+            margin-top: 2mm;
+            color: #666;
+        }
+
+        .cards-page {
+            page-break-after: always;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6mm;
+            max-width: 190mm;
+            margin: 0 auto 10mm auto;
+        }
+
+        .cards-page:last-child {
+            page-break-after: avoid;
+        }
+    </style>
+    <script>
+        // Datos del programa
+        const programData = {
+            "congregacion": "Mayor Buratovich",
+            "rotacion": {
+                "presidentes": ["Gabriel Caballero", "Jacsiel Rodriguez", "Mario Llanos", "Jorge Prado"],
+                "perlas": ["Gabriel Caballero", "Jacsiel Rodriguez", "Mario Llanos", "Jorge Prado"]
+            },
+            "semanas": [
+                {
+                    "fecha": "5-11 DE ENERO",
+                    "lectura": "Isaias 17-20",
+                    "asignaciones": {
+                        "lecturaEstudiante": "Luis Campos",
+                        "maestros": [
+                            { "estudiante": "Elena Villegas", "ayudante": "Matilde Esmoli" },
+                            { "estudiante": "Maria Rozas", "ayudante": "Mirta Rozas" },
+                            { "estudiante": "Jacsiel Rodriguez", "ayudante": "" }
+                        ]
+                    },
+                    "mejoresMaestros": [
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. De casa en casa", "duracion": 3 },
+                        { "tipo": "revisita", "titulo": "Haga revisitas. De casa en casa", "duracion": 4 },
+                        { "tipo": "discurso", "titulo": "Discurso: Dios quiere que le oremos", "duracion": 5 }
+                    ]
+                },
+                {
+                    "fecha": "12-18 DE ENERO",
+                    "lectura": "Isaias 21-23",
+                    "asignaciones": {
+                        "lecturaEstudiante": "Pedro Francisco",
+                        "maestros": [
+                            { "estudiante": "Mirta Rozas", "ayudante": "Ana Jara" },
+                            { "estudiante": "Leticia Garcia", "ayudante": "Norma Llanos" },
+                            { "estudiante": "Maria Prado", "ayudante": "Maria Oyon" },
+                            { "estudiante": "Mario Llanos", "ayudante": "" }
+                        ]
+                    },
+                    "mejoresMaestros": [
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. Predicacion informal", "duracion": 1 },
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. De casa en casa", "duracion": 3 },
+                        { "tipo": "revisita", "titulo": "Haga revisitas. De casa en casa", "duracion": 2 },
+                        { "tipo": "discurso", "titulo": "Discurso: A quien me gustaria parecerme? Durante el discurso, use la imagen", "duracion": 5 }
+                    ]
+                },
+                {
+                    "fecha": "19-25 DE ENERO",
+                    "lectura": "Isaias 24-27",
+                    "asignaciones": {
+                        "lecturaEstudiante": "Sandro Di'Ferdinando",
+                        "maestros": [
+                            { "estudiante": "Maria Caballero", "ayudante": "Veronica Di'Ferdinando" },
+                            { "estudiante": "Gladys Francisco", "ayudante": "Norma Rodriguez" },
+                            { "estudiante": "Jorge Prado", "ayudante": "Oscar San Martin" }
+                        ]
+                    },
+                    "mejoresMaestros": [
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. Predicacion publica", "duracion": 3 },
+                        { "tipo": "revisita", "titulo": "Haga revisitas. De casa en casa", "duracion": 4 },
+                        { "tipo": "explique", "titulo": "Explique sus creencias. Escenificacion", "duracion": 5 }
+                    ]
+                },
+                {
+                    "fecha": "26 DE ENERO A 1 DE FEBRERO",
+                    "lectura": "Isaias 28, 29",
+                    "asignaciones": {
+                        "lecturaEstudiante": "Jorge Prado",
+                        "maestros": [
+                            { "estudiante": "Idalba Ortiz", "ayudante": "Elena Villegas" },
+                            { "estudiante": "Norma Llanos", "ayudante": "Mirian Garcia" },
+                            { "estudiante": "Mario Llanos", "ayudante": "Oscar San Martin" },
+                            { "estudiante": "Maria Oyon", "ayudante": "Maria Caballero" }
+                        ]
+                    },
+                    "mejoresMaestros": [
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. Predicacion informal", "duracion": 2 },
+                        { "tipo": "revisita", "titulo": "Haga revisitas. De casa en casa", "duracion": 3 },
+                        { "tipo": "discipulos", "titulo": "Haga discipulos. De casa en casa", "duracion": 2 },
+                        { "tipo": "discipulos", "titulo": "Haga discipulos. lff leccion 18 puntos 6, 7", "duracion": 4 }
+                    ]
+                },
+                {
+                    "fecha": "2-8 DE FEBRERO",
+                    "lectura": "Isaias 30-32",
+                    "asignaciones": {
+                        "lecturaEstudiante": "Tiziano Di'Ferdinando",
+                        "maestros": [
+                            { "estudiante": "Caterin San Martin", "ayudante": "Norma Rodriguez" },
+                            { "estudiante": "Jorge Prado", "ayudante": "Maria Prado" },
+                            { "estudiante": "Veronica Di'Ferdinando", "ayudante": "Mirian Garcia" }
+                        ]
+                    },
+                    "mejoresMaestros": [
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. Predicacion informal", "duracion": 4 },
+                        { "tipo": "empiece", "titulo": "Empiece conversaciones. De casa en casa", "duracion": 4 },
+                        { "tipo": "revisita", "titulo": "Haga revisitas. De casa en casa", "duracion": 4 }
+                    ]
+                }
+            ]
+        };
+
+        function generarTarjeta(nombre, ayudante, fecha, intervencion, descripcion, detalles) {
+            const intervencionTexto = descripcion ? `${intervencion}. ${descripcion}` : intervencion;
+            const notaTexto = detalles ||
+                `En la <i>Guía de actividades</i> encontrará toda la información que necesita para su intervención. Repase también las indicaciones que se describen en las <i>Instrucciones para la reunión Vida y Ministerio Cristianos</i> (S-38).`;
+
+            return `<div class="card">
+            <div class="card-header">
+                ASIGNACIÓN PARA LA REUNIÓN<br>
+                VIDA Y MINISTERIO CRISTIANOS
+            </div>
+
+            <div class="field">
+                <span class="field-label">Nombre:</span>
+                <span class="field-line">${nombre}</span>
+            </div>
+
+            <div class="field">
+                <span class="field-label">Ayudante:</span>
+                <span class="field-line">${ayudante}</span>
+            </div>
+
+            <div class="field">
+                <span class="field-label">Fecha:</span>
+                <span class="field-line">${fecha}</span>
+            </div>
+
+            <div class="field">
+                <span class="field-label">Intervención núm.:</span>
+                <span class="field-line">${intervencionTexto}</span>
+            </div>
+
+            <div class="checkbox-section">
+                <div class="checkbox-title">Se presentará en:</div>
+                <div class="checkbox-option">
+                    <span class="checkbox checked"></span>
+                    <span>Sala principal</span>
+                </div>
+                <div class="checkbox-option">
+                    <span class="checkbox"></span>
+                    <span>Sala auxiliar núm. 1</span>
+                </div>
+                <div class="checkbox-option">
+                    <span class="checkbox"></span>
+                    <span>Sala auxiliar núm. 2</span>
+                </div>
+            </div>
+
+            <div class="note-section">
+                <div class="note-title">Nota al estudiante:</div>
+                <div class="note-text">
+                    ${notaTexto}
+                </div>
+                <div class="footer">S-89-S  11/23</div>
+            </div>
+        </div>`;
+        }
+
+        function generarTodasLasTarjetas() {
+            const body = document.body;
+            let allCards = [];
+
+            programData.semanas.forEach((semana) => {
+                // Tarjeta para Lectura de la Biblia (intervención #3)
+                if (semana.asignaciones.lecturaEstudiante) {
+                    allCards.push(generarTarjeta(
+                        semana.asignaciones.lecturaEstudiante,
+                        '',
+                        semana.fecha,
+                        '3',
+                        'Lectura de la Biblia',
+                        null
+                    ));
+                }
+
+                // Tarjetas para Mejores Maestros (intervenciones #4, #5, #6, etc.)
+                semana.asignaciones.maestros.forEach((maestro, idx) => {
+                    if (maestro.estudiante) {
+                        const intervencion = semana.mejoresMaestros[idx];
+                        const descripcion = intervencion ? intervencion.titulo : '';
+
+                        allCards.push(generarTarjeta(
+                            maestro.estudiante,
+                            maestro.ayudante || '',
+                            semana.fecha,
+                            (4 + idx).toString(),
+                            descripcion,
+                            null
+                        ));
+                    }
+                });
+            });
+
+            // Agrupar tarjetas en páginas de 4
+            let html = '';
+            for (let i = 0; i < allCards.length; i += 4) {
+                html += '<div class="cards-page">';
+                for (let j = i; j < i + 4 && j < allCards.length; j++) {
+                    html += allCards[j];
+                }
+                html += '</div>';
+            }
+
+            body.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', generarTodasLasTarjetas);
+    </script>
+</head>
+<body>
+    <!-- Las tarjetas se generarán dinámicamente -->
+</body>
+</html>
